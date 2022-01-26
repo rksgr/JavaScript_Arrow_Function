@@ -34,3 +34,23 @@
     console.log("Result with invalid email Id1:"+ result_invalid_email_id1);  // Returns false
     console.log("Result with invalid email Id:2"+ result_invalid_email_id2);  // Returns false
 }
+
+/**
+ * UC 3: Email validation: Make sure . and com after gmail are there
+ */
+ {
+    let valid_email_id ="abc@gmail.com";
+    let invalid_email_id1  = "abc@gmail.co";
+    let invalid_email_id2 = "abc@gmailcom";
+
+    // Atleast three characters should be present
+    let regex = RegExp("[a-zA-Z0-9]{3,}[@]{1}[g][m][a][i][l][.][c][o][m]");
+
+    let result_valid_email_id = regex.test(valid_email_id);
+    let result_invalid_email_id1 = regex.test(invalid_email_id1);
+    let result_invalid_email_id2 = regex.test(invalid_email_id2);
+
+    console.log("Is valid email Id: "+ result_valid_email_id);      // Returns true
+    console.log("Is valid email Id1:"+ result_invalid_email_id1);  // Returns false
+    console.log("Is valid email Id2: "+ result_invalid_email_id2);  // Returns false
+}
