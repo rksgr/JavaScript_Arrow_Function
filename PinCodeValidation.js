@@ -18,3 +18,15 @@
     let result = regex.test(pin);
     console.log(result);    // returns false
 }
+
+/**
+ * UC 3: Restrict the pin code from taking alphabets or special characters at end
+ */
+{
+    let pin = "400088B";
+
+    // End should contain only digits from 1 to 9, cannot contain any alphabets or special characters
+    let regex = RegExp('[1-9][0-9]{4}[0-9]$');
+    let result = regex.test(pin);
+    console.log(result);    // returns false
+}
